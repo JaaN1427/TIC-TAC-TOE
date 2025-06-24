@@ -41,3 +41,5 @@ jobs:
         run: trivy image janal024/tic-tac-toe:latest > trivyimagedeploy.txt
       - name: Deploy to container
         run: docker run -d --name game -p 3000:3000 janal024/tic-tac-toe:latest
+      - name: Deploy to kubernetes
+        run: kubectl apply -f deployment-service.yml
